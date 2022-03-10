@@ -5,50 +5,25 @@
     "singularName": "article",
     "pluralName": "articles",
     "displayName": "Article",
-    "name": "article"
+    "description": ""
   },
   "options": {
-    "increments": true,
-    "timestamps": true,
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
+    "Title": {
+      "type": "string"
     },
-    "description": {
-      "type": "text",
-      "required": true
+    "Body": {
+      "type": "richtext"
     },
-    "content": {
-      "type": "richtext",
-      "required": true
+    "Excerpt": {
+      "type": "text"
     },
-    "slug": {
+    "Slug": {
       "type": "uid",
-      "targetField": "title",
-      "required": true
-    },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
-    },
-    "image": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::writer.writer",
-      "inversedBy": "articles"
+      "targetField": "Title"
     }
   }
 }
